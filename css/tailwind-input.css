@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS */
+html.dark .theme-toggle-icon-dark,
+html:not(.dark) .theme-toggle-icon-light {
+  display: none;
+}
+
+.js-github-error[data-animation="false"] {
+  opacity: 0;
+  transition:
+    opacity 250ms ease-in-out,
+    transform 500ms ease-in-out;
+  transform: translateX(-100vw);
+}
+.js-github-error[data-animation="true"] {
+  opacity: 1;
+  transition:
+    opacity 250ms ease-in-out,
+    transform 500ms ease-in-out;
+  transform: translateX(0);
+}

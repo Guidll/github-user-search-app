@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Github - User Search</title>
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="./img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="./img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <link rel="stylesheet" href="./css/tailwind-output.css">
+
+  <!-- JS -->
+  <script defer type="text/javascript" src="./js/main.js"></script>
+</head>
+<body class="transition-colors relative font-['Space_Mono'] max-w-4xl mx-auto bg-slate-50 text-neutral-700 dark:text-white dark:bg-blue-950">
+  <header class="py-4 mx-6">
+    <div>
+      <div class="flex justify-between">
+        <h1 class="text-2xl font-bold">devfinder</h1>
+        <button type="button" title="Toggle theme" class="flex items-center gap-2 p-2 js-theme-toggle">
+          <span class="js-theme-toggle-text">Light</span>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 theme-toggle-icon-light"><path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 theme-toggle-icon-dark"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="grid gap-4">
+    <!-- Search component -->
+    <section class="p-2 mx-6 overflow-hidden rounded-lg bg-slate-200 dark:bg-blue-900 lg:pl-6">
+      <div class="flex gap-2">
+        <div class="relative grow">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="absolute left-0 h-6 transform pointer-events-none text-sky-500 top-2/4 -translate-y-2/4"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/></svg>
+          <input type="text" value="octocat" placeholder="Search Github username..." class="w-full p-2 pl-8 transition-all bg-transparent rounded-md outline-none hover:ring hover:ring-blue-300 hover:ring-solid focus:ring focus:ring-blue-500 focus:ring-solid js-github-input">
+        </div>
+        <button type="button" class="px-4 text-white transition-colors rounded-md outline-none bg-sky-500 hover:bg-sky-400 focus:bg-sky-600 js-github-btn">Search</button>
+      </div>
+    </section>
+
+    <!-- User info -->
+    <section class="p-6 mx-6 rounded-lg bg-slate-200 dark:bg-blue-900 js-github">
+      <div class="grid grid-cols-3 gap-6 lg:grid-cols-4">
+        <img src="./img/octocat.png" alt="User avatar" class="rounded-full lg:row-span-2 aspect-square js-github-image">
+        <div class="col-span-2 lg:col-span-3 lg:flex lg:gap-4">
+          <div class="grow">
+            <h2 class="text-2xl font-bold tracking-wide js-github-name">Octocat</h2>
+            <h3 class="text-sky-500">@<span class="js-github-username">octocat</span></h3>
+          </div>
+          <div class="lg:shrink-0 lg:text-right lg:leading-8">Joined <span class="js-github-joined"></span></div>
+        </div>
+        <div class="col-span-3 first-letter:uppercase lg:col-start-2 js-github-bio">This profile has no bio</div>
+      </div>
+
+      <div class="lg:ml-[205.5px] mt-6 p-6 flex flex-wrap gap-4 bg-slate-50 text-center lg:text-start dark:bg-blue-950 rounded-md">
+        <div class="grow">
+          <div>Repos</div>
+          <div class="text-xl font-bold js-github-repos">--</div>
+        </div>
+        <div class="grow">
+          <div>Followers</div>
+          <div class="text-xl font-bold js-github-followers">--</div>
+        </div>
+        <div class="grow">
+          <div>Following</div>
+          <div class="text-xl font-bold js-github-following">--</div>
+        </div>
+      </div>
+
+      <div class="lg:ml-[205.5px] grid gap-4 mt-6 lg:grid-cols-2">
+        <!-- Location -->
+        <div class="flex items-center gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-1.99 3.963-4.98 3.963-8.827a8.25 8.25 0 00-16.5 0c0 3.846 2.02 6.837 3.963 8.827a19.58 19.58 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/></svg>
+          <span class="first-letter:uppercase js-github-location">Not available</span>
+        </div>
+        <!-- Site -->
+        <div class="flex items-center gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244"/></svg>
+          <span class="first-letter:uppercase js-github-site">Not available</span>
+        </div>
+        <!-- X(twitter) -->
+        <div class="flex items-center gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" class="w-6 h-6 fill-current"><path d="M26.37,26l-8.795-12.822l0.015,0.012L25.52,4h-2.65l-6.46,7.48L11.28,4H4.33l8.211,11.971L12.54,15.97L3.88,26h2.65 l7.182-8.322L19.42,26H26.37z M10.23,6l12.34,18h-2.1L8.12,6H10.23z"/></svg>
+          <span class="first-letter:uppercase js-github-x">Not available</span>
+        </div>
+        <!-- Company -->
+        <div class="flex items-center gap-4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6"><path fill-rule="evenodd" d="M3 2.25a.75.75 0 000 1.5v16.5h-.75a.75.75 0 000 1.5H15v-18a.75.75 0 000-1.5H3zM6.75 19.5v-2.25a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v2.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75zM6 6.75A.75.75 0 016.75 6h.75a.75.75 0 010 1.5h-.75A.75.75 0 016 6.75zM6.75 9a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM6 12.75a.75.75 0 01.75-.75h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 6a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zm-.75 3.75A.75.75 0 0110.5 9h.75a.75.75 0 010 1.5h-.75a.75.75 0 01-.75-.75zM10.5 12a.75.75 0 000 1.5h.75a.75.75 0 000-1.5h-.75zM16.5 6.75v15h5.25a.75.75 0 000-1.5H21v-12a.75.75 0 000-1.5h-4.5zm1.5 4.5a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008zm.75 2.25a.75.75 0 00-.75.75v.008c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75v-.008a.75.75 0 00-.75-.75h-.008zM18 17.25a.75.75 0 01.75-.75h.008a.75.75 0 01.75.75v.008a.75.75 0 01-.75.75h-.008a.75.75 0 01-.75-.75v-.008z" clip-rule="evenodd"/></svg>
+          <span class="first-letter:uppercase js-github-company">Not available</span>
+        </div>
+      </div>
+
+    </section>
+    <!-- Error alert -->
+    <div data-animation="false" class="sticky flex items-center gap-2 p-6 mx-6 text-red-600 rounded-lg shadow-lg bottom-2 lg:shadow-none lg:static bg-slate-200 dark:bg-blue-900 dark:text-red-400 hidden1 js-github-error">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"/></svg>
+      <div>The user cannot be found.</div>
+    </div>
+  </main>
+</body>
+</html>
