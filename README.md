@@ -12,9 +12,9 @@ This project is a web application that utilizes the GitHub user API to retrieve 
 
 ## Screenshots
 
-![Desktop](./img/readme/desktop.png)
+<img src="./img/readme/desktop.png" />
 
-![Mobile](./img/readme/mobile.png)
+<img src="./img/readme/mobile.png" width="250" />
 
 ## Usage
 
