@@ -18,7 +18,7 @@ This project is a web application that utilizes the GitHub user API to retrieve 
 
 ## Usage
 
-1. Clone the repository: [github-user-search-app](https://github.com/Guidll/github-user-search-app)
+1. Clone the repository: [github-user-search-app](https://github.com/Guidll/github-user-search-app) or use the [deploy link](https://mellifluous-cupcake-dcde99.netlify.app/).
 
 2. Open the `index.html` file in your web browser.
 
